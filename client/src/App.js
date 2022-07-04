@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Spinner from 'react-bootstrap/Spinner';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const App = () => {
     const [state, setState] = useState(undefined);
@@ -33,6 +34,7 @@ const App = () => {
                 <div><h1 className='judul'>Progres monitoring</h1></div>
                 <h2 className='kata'>Suhu : {state.data.temperature} C</h2>
                 <h2 className='kata'>Kelembaban :{state.data.humidity} %</h2>
+                <ProgressBar now={state.data.humidity} label={`${state.data.humidity}%`} />
             </div>);
     }
 }
