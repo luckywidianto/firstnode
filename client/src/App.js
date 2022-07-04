@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import Spinner from 'react-bootstrap/Spinner';
 
 const App = () => {
     const [state, setState] = useState(undefined);
@@ -24,14 +24,15 @@ const App = () => {
     }
 
     if (state === undefined) {
-        return <p>Loading....</p>
+        return <Spinner class="App" animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
     } else {
         return (
             <div className='App'>
                 <div><h1 className='judul'>Progres monitoring</h1></div>
                 <h2 className='kata'>Suhu : {state.data.temperature} C</h2>
                 <h2 className='kata'>Kelembaban :{state.data.humidity} %</h2>
-                <ProgressBar now={state.data.temperature} label={`${state.data.temperature} C`} />
             </div>);
     }
 }
