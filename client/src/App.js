@@ -32,9 +32,9 @@ const App = () => {
         return (
             <div className='App'>
                 <div><h1 className='judul'>Progres monitoring</h1></div>
-                <h2 className='kata'>Suhu : {state.data.temperature} C</h2>
-                <h2 className='kata'>Kelembaban :{state.data.humidity} %</h2>
-                <ProgressBar now={state.data.humidity} label={`${state.data.humidity}%`} />
+                <h2 className='kata'>Suhu : {state.data.data.suhu} C</h2>
+                <h2 className='kata'>Kelembaban :{state.data.data.kelembaban} %</h2>
+                <ProgressBar now={state.data.humidity} label={`${state.data.data.kelembaban}%`} />
             </div>);
     }
 }

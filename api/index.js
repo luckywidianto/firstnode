@@ -12,7 +12,7 @@ app.use(cors())
 app.get("/", async (req, res) => {
     let result;
     try {
-        await antares.get("AntaresTry", "Sender2").then(function (response) {
+        await antares.get("AntaresTry", "Sender").then(function (response) {
             result = response.content;
         });
         res.status(200).send({
