@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 var antares = require("antares-http");
-const { response } = require('express');
 const cors = require("cors");
 
 antares.setAccessKey("2c90c5b7dfb14ded:66c0b292bf7c153d");

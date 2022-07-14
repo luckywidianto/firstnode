@@ -7,7 +7,12 @@ const App = () => {
     const [state, setState] = useState(undefined);
 
     useEffect(() => {
-        fetchData();
+        const delay = setInterval(() => {
+            fetchData();
+        }, 10000)
+        return () => {
+            clearInterval(delay)
+        }
     }, []);
 
     const fetchData = async () => {
@@ -25,16 +30,16 @@ const App = () => {
     }
 
     if (state === undefined) {
-        return <Spinner class="App" animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>
+        return <Spinner className="App" animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     } else {
         return (
             <div className='App'>
                 <div><h1 className='judul'>Progres monitoring</h1></div>
                 <h2 className='kata'>Suhu : {state.data.data.suhu} C</h2>
                 <h2 className='kata'>Kelembaban :{state.data.data.kelembaban} %</h2>
-                <ProgressBar now={state.data.humidity} label={`${state.data.data.kelembaban}%`} />
+                <ProgressBar now={state.data.data.kelembaban} label={`${state.data.data.kelembaban}%`} />
             </div>);
     }
 }
