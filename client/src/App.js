@@ -30,16 +30,16 @@ const App = () => {
     }
 
     if (state === undefined) {
-        return <Spinner className="App" animation="border" role="status">
+        return <div className='App loading'><Spinner className="App" animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
-        </Spinner>
+        </Spinner></div>
     } else {
         return (
             <div className='App'>
-                <div><h1 className='judul'>Progres monitoring</h1></div>
-                <h2 className='kata'>Suhu : {state.data.data.suhu} C</h2>
-                <h2 className='kata'>Kelembaban :{state.data.data.kelembaban} %</h2>
-                <ProgressBar now={state.data.data.kelembaban} label={`${state.data.data.kelembaban}%`} />
+                <div><h1 className='judul'>Temperature and Humidity Monitor </h1></div>
+                <h2 className='kata '>Temperature<br></br> {state.data.data.suhu} C</h2>
+                <h2 className='kata '>Humidity<br></br>{state.data.data.kelembaban} %</h2>
+                {/* <ProgressBar now={state.data.data.kelembaban} label={`${state.data.data.kelembaban}%`} /> */}
             </div>);
     }
 }
