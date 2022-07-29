@@ -11,7 +11,7 @@ app.use(cors())
 app.get("/", async (req, res) => {
     let result;
     try {
-        await antares.get("AntaresTry","sender").then(function (response) {
+        await antares.get("AutoMeter","Lorawan").then(function (response) {
             result = response.content;
         });
         res.status(200).send({

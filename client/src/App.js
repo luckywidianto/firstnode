@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Spinner from 'react-bootstrap/Spinner';
-import ProgressBar from 'react-bootstrap/ProgressBar';
+// import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const App = () => {
     const [state, setState] = useState(undefined);
@@ -28,6 +28,7 @@ const App = () => {
         }
         catch (error) { console.log(error); }
     }
+   
 
     if (state === undefined) {
         return <div className='App loading'><Spinner className="App" animation="border" role="status">
@@ -36,9 +37,9 @@ const App = () => {
     } else {
         return (
             <div className='App'>
-                <div><h1 className='judul'>Temperature and Humidity Monitor </h1></div>
-                <h2 className='kata '>Temperature<br></br> {state.data.data.suhu} C</h2>
-                <h2 className='kata '>Humidity<br></br>{state.data.data.kelembaban} %</h2>
+                <div><h1 className='judul'>Liter and Debit Monitor </h1></div>
+                <h2 className='kata '>Liter<br></br> {state.data.data.liter} liter</h2>
+                <h2 className='kata '>Debit<br></br>{state.data.data.debit} m<sup>3</sup>/s</h2>
                 {/* <ProgressBar now={state.data.data.kelembaban} label={`${state.data.data.kelembaban}%`} /> */}
             </div>);
     }
